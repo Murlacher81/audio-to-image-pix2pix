@@ -27,6 +27,8 @@ Here is the list that are needed for this project:
   <li>!pip install pyopengl</li>
 </ul>
 
+**Important**: It is important to notice, that the extra-index-url depends on which CUDA-Version you currently have installed.
+
 #### Setup the project
 After preparing the 
 
