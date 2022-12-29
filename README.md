@@ -59,6 +59,19 @@ and install all of the previous listed packages.
 Two major things left to do. <br />
 1. Finalise the setup by creating a new test.
 2. Create Dataset and train the model.
+<br />
+First create a new folder in the project and name it "Library". In there insert *Spout.py*, *SpoutSDK-35.pyd*, *SpoutSDK-36.pyd* and *SpoutSDK.pyd*.
+It should look like this: <br />
+<img src="LibraryFolder.png" />
+<br />
+- Copy paste *test.py* and rename it. Mine is called *test2.py*
+- Create a .bat file and call it the same.
+In the .bat file copy paste this and change <> to your fits.
+```
+python <copied-py-file>.py --dataroot ./datasets/<folder-name> --name <name-of-results> --model pix2pix --direction AtoB --load_size 512 --crop_size 512
+```
+Below */datasets/<folder-name>* make sure to add another folder named *test* and or *train* and insert your dataset in there.
+
 
 ### Train
 #### Create Datasets
