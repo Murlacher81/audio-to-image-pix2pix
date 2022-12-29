@@ -174,7 +174,7 @@ Open *getdataset2.toe* and to the far left use the preferred Video.
 To the far right, there is a box called moviefileout1. Enter the directory path and give the images a name:
 <img src="imgs/MovieOutput1.png" />  
 Pause Touchdesigner and reset the video:
-<img src="imgs/MovieOutput2.png" />  
+<img src="imgs/MovieOutput4.png" />  
 Enable Record and unpause Touchdesigner and let it run through the video. Make sure to stop recording after the video end. Otherwise there will be redundant images.
 <img src="imgs/MovieOutput3.png" />  
 
