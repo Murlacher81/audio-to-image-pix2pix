@@ -73,7 +73,29 @@ python test-py-file.py --dataroot ./datasets/folder-name --name name-of-results 
 Below */datasets/folder-name* make sure to add another folder named *test* and or *train* and insert your dataset in there.  
   
 For the last part a certain template is needed. Download *template.py* from this repository, which is a template for the spout library.
-In the new python file (test2.py), start by setting up the functions:
+In the new python file (test2.py), start by importing all needed imports:
+```
+import os
+from options.test_options import TestOptions
+from data import create_dataset
+from models import create_model
+
+import sys
+sys.path.append('Library')
+
+import numpy as np
+import argparse
+import time
+import SpoutSDK
+import pygame
+from pygame.locals import *
+from OpenGL.GL import *
+from OpenGL.GL.framebufferobjects import *
+from OpenGL.GLU import *
+
+import torch
+```
+Then setup the needed functions:
 ```
 def main_pipeline(data, model, dataset):
 
@@ -81,6 +103,17 @@ def main():
 
 if __name__ == '__main__':
     main()
+```
+Copy and paste the main() function of the template into the test file. Change the option parsing afterwards:
+```
+def main():
+    opt = TestOptions().parse()  # get test options
+    # hard-code some parameters for test
+    opt.num_threads = 0   # test code only supports num_threads = 0
+    opt.batch_size = 1    # test code only supports batch_size = 1
+    opt.serial_batches = True  # disable data shuffling; comment this line if results on randomly chosen images are needed.
+    opt.no_flip = True    # no flip; comment this line if results on flipped images are needed.
+    opt.display_id = -1   # no visdom display; the test code saves the results to a HTML file.
 ```
 
 ### Train
