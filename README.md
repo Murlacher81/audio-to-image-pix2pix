@@ -7,7 +7,7 @@ In order to run and play with the model, the required Touchdesigner file has to 
 <img src="imgs/TouchAudioInput.png" />
 <br />
 Click on either one of the two boxes and select you input device or audio file on the left side of the screen.
-<img scr="imgs/TouchAudioInput2.png" />
+<img src="imgs/TouchAudioInput2.png" />
 <br />
 In the Project you can find *test2.bat* which starts the model. The Model is trained on the Doom-Images. <br />
 Now, depending on the Audio Input, different Images should appear in *test2.toe*. If they don't on the far right side of *test2.toe* there is a box called "null" and next to the name is a circle to activate the display.
@@ -45,7 +45,10 @@ Here is the list that are needed for this project:
 **Important**: It is important to notice, that the extra-index-url depends on which CUDA-Version you currently have installed.
 
 #### Setup the project
-After preparing the 
+With conda, go to the root folder and create a conda environment named *pix2pix* with Python 3.7.
+```
+conda create -n pix2pix python=3.7
+```
 
 ### Train
 #### Create Datasets
