@@ -45,10 +45,15 @@ Here is the list that are needed for this project:
 **Important**: It is important to notice, that the extra-index-url depends on which CUDA-Version you currently have installed.
 
 #### Setup the project
-With conda, go to the root folder and create a conda environment named *pix2pix* with Python 3.7.
+With conda, go to the root folder of the project and create a conda environment named *pix2pix* with Python 3.7.
 ```
 conda create -n pix2pix python=3.7
 ```
+Activate the environment:
+```
+activate pix2pix
+```
+and install all of the previous listed packages.
 
 ### Train
 #### Create Datasets
