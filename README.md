@@ -62,4 +62,6 @@ and install all of the previous listed packages.
 #### Touchdesigner
 
 ### Sources and Thanks
-Idea, Help and Sources where found <a href="https://medium.com/@vasily.onl/visualizing-sound-with-ai-e7a9191fea2c">here</a> thanks to Vasily Batin.
+Idea, Help and Sources where found <a href="https://medium.com/@vasily.onl/visualizing-sound-with-ai-e7a9191fea2c">here</a> thanks to Vasily Batin. <br />
+Helpful solutions to problems:
+- <a href="https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/commit/9bcef69d5b39385d18afad3d5a839a02ae0b43e7">Attribute Error</a>
