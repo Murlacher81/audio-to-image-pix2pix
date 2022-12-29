@@ -104,7 +104,7 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-Copy and paste the main() function of the template into the test file. Change the option parsing afterwards:
+Copy and paste the main() function of the template into the test file. Change the option parsing with the original test.py parsing afterwards:
 ```
 def main():
     opt = TestOptions().parse()  # get test options
@@ -115,7 +115,32 @@ def main():
     opt.no_flip = True    # no flip; comment this line if results on flipped images are needed.
     opt.display_id = -1   # no visdom display; the test code saves the results to a HTML file.
 ```
+Right below is the setup of the model and the part to define the dataset. Add this below the last code block:
+```
+dataset = create_dataset(opt)  # create a dataset given opt.dataset_mode and other options
+    model = create_model(opt)      # create a model given opt.model and other options
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
 
+    for i, data in enumerate(dataset):
+        if i >= 1: 
+            break
+        defdata = data
+```
+Under window details, change the next lines.
+```
+    width = 512 
+    height = 512 
+    display = (width,height)
+    
+    req_type = 'input-output'
+    receiverName = 'input'
+    senderName = 'output'
+    silent = True
+```
+Last thing to change in the main function is the output. The main_pipeline functions asks for three parameters, change it accordingly.
+´´´
+output = main_pipeline(data, model, defdata)
+´´´
 ### Train
 #### Create Datasets
 
