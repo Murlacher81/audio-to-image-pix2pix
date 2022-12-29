@@ -64,14 +64,24 @@ It should look like this: <br />
 <img src="imgs/LibraryFolder.png" />
 
 #### Create Test
-- Copy paste *test.py* and rename it. Mine is called *test2.py*
-- Create a .bat file and call it the same.
+- Copy paste *test.py* and rename it or create a new python file. Mine is called *test2.py*
+- Create a .bat file and name it.
 In the .bat file copy paste this and change parts to your fits.
 ```
-python copied-py-file.py --dataroot ./datasets/folder-name --name name-of-results --model pix2pix --direction AtoB --load_size 512 --crop_size 512
+python test-py-file.py --dataroot ./datasets/folder-name --name name-of-results --model pix2pix --direction AtoB --load_size 512 --crop_size 512
 ```
-Below */datasets/folder-name* make sure to add another folder named *test* and or *train* and insert your dataset in there.
+Below */datasets/folder-name* make sure to add another folder named *test* and or *train* and insert your dataset in there.  
+  
+For the last part a certain template is needed. Download *template.py* from this repository, which is a template for the spout library.
+In the new python file (test2.py), start by setting up the functions:
+```
+def main_pipeline(data, model, dataset):
 
+def main():
+
+if __name__ == '__main__':
+    main()
+```
 
 ### Train
 #### Create Datasets
