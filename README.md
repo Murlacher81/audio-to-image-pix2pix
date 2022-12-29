@@ -6,11 +6,11 @@ By Michael Urlacher
 In order to run and play with the model, the required Touchdesigner file has to be opened. Open the downloaded *test2.toe* - it only has to be opened, but in the far left, you can change the Audio Input to test different audio.
 <img src="imgs/TouchAudioInput.png" />
 <br />
-Click on either one of the two boxes and select you input device or audio file on the left side of the screen. <br />
+Click on either one of the two boxes and select you input device or audio file on the left side of the screen.
 <img src="imgs/TouchAudioInput2.png" />
 <br />
 In the Project you can find *test2.bat* which starts the model. The Model is trained on the Doom-Images. <br />
-Now, depending on the Audio Input, different Images should appear in *test2.toe*. If they don't on the far right side of *test2.toe* there is a box called "null" and next to the name is a circle to activate the display.
+Now, depending on the Audio Input, different Images should appear in *test2.toe*. If they don't on the far right side of *test2.toe* there is a box called "null" and next to the name is a circle to activate the display. <br />
 <img src="imgs/TouchImageOutput.png" />
 <br />
 If the image is not changing, in the post processing part there is a box called *math*. There you can control the multiplier of the Audio, make sure its above **0**.
