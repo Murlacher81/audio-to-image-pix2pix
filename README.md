@@ -187,8 +187,10 @@ Change the train cell as needed for the model:
 ```
 Execute the cell and after training use the checkpoints in the model.
 
-### Test
-#### Touchdesigner
+### Conclusion
+This project was fun and I learned a lot. Some problems accured during the process of this project and even after the project I had some ideas to improve the results.
+For example: Using slower music and video for training could improve the results, as faster music and video potentially creates overlapping datasets.
+
 
 ### Sources and Thanks
 Idea, Help and Sources where found <a href="https://medium.com/@vasily.onl/visualizing-sound-with-ai-e7a9191fea2c">here</a> thanks to Vasily Batin. <br />
