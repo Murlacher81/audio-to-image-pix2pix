@@ -1,8 +1,11 @@
 # Digital Creativity
 ## Audio to Image with pix2pix
+By Michael Urlacher
 
 ### How to use
-In order to run and play with the model, the required Touchdesigner file has to be opened.
+In order to run and play with the model, the required Touchdesigner file has to be opened. Open the downloaded *test2.toe* - it only has to be opened, but in the far left, you can change the Audio Input to test different audio.
+<img src="" />
+
 ### Create Project
 #### Prerequisite
 For this project an Nvidia GPU with CUDA is needed.
