@@ -172,11 +172,11 @@ Before we can train the model, a dataset is needed. This can be done with Touchd
 #### Create Datasets
 Open *getdataset2.toe* and to the far left use the preferred Video.  
 To the far right, there is a box called moviefileout1. Enter the directory path and give the images a name:
-<img src="imgs/MovieOutput1.png" />
+<img src="imgs/MovieOutput1.png" />  
 Pause Touchdesigner and reset the video:
-<img src="imgs/MovieOutput2.png" />
+<img src="imgs/MovieOutput2.png" />  
 Enable Record and unpause Touchdesigner and let it run through the video. Make sure to stop recording after the video end. Otherwise there will be redundant images.
-<img src="imgs/MovieOutput3.png" />
+<img src="imgs/MovieOutput3.png" />  
 
 #### Actual training
 After getting the dataset, use the <a href="https://colab.research.google.com/github/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/pix2pix.ipynb#scrollTo=9UkcaFZiyASl">Notebook</a> to train the Model.  
