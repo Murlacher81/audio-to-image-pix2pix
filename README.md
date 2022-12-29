@@ -66,9 +66,7 @@ It should look like this: <br />
 - Copy paste *test.py* and rename it. Mine is called *test2.py*
 - Create a .bat file and call it the same.
 In the .bat file copy paste this and change parts to your fits.
-```
-python copied-py-file.py --dataroot ./datasets/folder-name --name name-of-results --model pix2pix --direction AtoB --load_size 512 --crop_size 512
-```
+
 Below */datasets/folder-name* make sure to add another folder named *test* and or *train* and insert your dataset in there.
 
 
