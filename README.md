@@ -117,7 +117,7 @@ def main():
 ```
 Right below is the setup of the model and the part to define the dataset. Add this below the last code block:
 ```
-dataset = create_dataset(opt)  # create a dataset given opt.dataset_mode and other options
+    dataset = create_dataset(opt)  # create a dataset given opt.dataset_mode and other options
     model = create_model(opt)      # create a model given opt.model and other options
     model.setup(opt)               # regular setup: load and print networks; create schedulers
 
@@ -138,11 +138,54 @@ Under window details, change the next lines.
     silent = True
 ```
 Last thing to change in the main function is the output. The main_pipeline functions asks for three parameters, change it accordingly.
-´´´
+```
 output = main_pipeline(data, model, defdata)
-´´´
+```
+  
+  
+The main_pipline function handles the data. First we have to get the data of Touchdesigner and convert it in order to use it.
+```
+    #Spout input data
+    data = (data / 255.0) * 2 - 1 #transform data
+    data = np.transpose(data, [2, 0, 1]) #change order of data
+    data_torch = torch.Tensor([data]) #convert data to the tensor
+```
+Next, use the data for the model which gives us the results:
+```
+    dataset['A'] = data_torch
+    model.set_input(dataset)               # unpack data from data loader
+    model.test()                           # run inference
+    visuals = model.get_current_visuals()  # get image results
+```
+Lastly, we output the results of the visuals. Where also have to change the order of the data:
+```
+    output = visuals['fake_B'].data.cpu().numpy()
+    output = np.transpose(output, [0,2,3,1])[0] #change order of the output
+
+    #convert texture
+    output = (output + 1) * 255 / 2
+
+    return output
+```
 ### Train
+Before we can train the model, a dataset is needed. This can be done with Touchdesigner, which gives us the possibility to layout our audio and images next to each other.
 #### Create Datasets
+Open *getdataset2.toe* and to the far left use the preferred Video.  
+To the far right, there is a box called moviefileout1. Enter the directory path and give the images a name:
+<img src="MovieOutput1.png" />
+Pause Touchdesigner and reset the video:
+<img src="MovieOutput2.png" />
+Enable Record and unpause Touchdesigner and let it run through the video. Make sure to stop recording after the video end. Otherwise there will be redundant images.
+<img src="MovieOutput3.png" />
+
+#### Actual training
+After getting the dataset, use the <a href="https://colab.research.google.com/github/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/pix2pix.ipynb#scrollTo=9UkcaFZiyASl">Notebook</a> to train the Model.  
+Execute the Install cells and upload the dataset in the directoy */datasets/folder-name/train*.
+Change the train cell as needed for the model:
+```
+!python train.py --dataroot ./datasets/folder-name --name name-of-results --model pix2pix --direction AtoB --display_id -1 --load_size 512 --crop_size 512 --n_epochs 50 --n_epochs_decay 50
+```
+Execute the cell and after training use the checkpoints in the model.
 
 ### Test
 #### Touchdesigner
