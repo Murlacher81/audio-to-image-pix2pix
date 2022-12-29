@@ -54,6 +54,11 @@ Activate the environment:
 activate pix2pix
 ```
 and install all of the previous listed packages.
+<br />
+<br />
+Two major things left to do. <br />
+1. Finalise the setup by creating a new test.
+2. Create Dataset and train the model.
 
 ### Train
 #### Create Datasets
